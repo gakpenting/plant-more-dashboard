@@ -10,6 +10,7 @@
         "uuid": "846e5a30-880b-42c0-ac7c-afa5e47dbbe8"
     },
     "dependencies": {
+        "@newrelic/nr1-community": "^1.2.0",
         "prop-types": "^15.6.2",
         "react": "^16.6.3",
         "react-dom": "^16.6.3"
