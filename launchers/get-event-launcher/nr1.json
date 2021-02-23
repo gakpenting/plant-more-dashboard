@@ -1,7 +1,7 @@
 {
     "schemaType": "LAUNCHER",
     "id": "get-event-launcher",
-    "displayName": "GetEventLauncher",
-    "description": "Describe me",
+    "displayName": "Plant More Statistic Dashboard",
+    "description": "This is a dashboard where you can see the statistic of my website 'Plant More' which has the forest data,air quality data,and plant data for your country or area",
     "rootNerdletId": "get-event-nerdlet"
 }

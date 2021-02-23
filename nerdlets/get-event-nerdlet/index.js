@@ -35,6 +35,19 @@ export default class Nr1HowtoAddTimePicker extends React.Component {
           const since = timeRangeToNrql(PlatformState);
           return (
             <>
+             <Grid
+                className="primary-grid"
+                spacingType={[Grid.SPACING_TYPE.NONE, Grid.SPACING_TYPE.NONE]}
+              >
+                <GridItem className="primary-content-container" columnSpan={12}>
+                <HeadingText
+                      spacingType={[HeadingText.SPACING_TYPE.MEDIUM]}
+                      type={HeadingText.TYPE.HEADING_4}
+                    >
+                      <b>URL OF PLANT MORE WEBSITE:</b><a href="https://plant-more.vercel.app/" target="_blank">https://plant-more.vercel.app/</a>
+                    </HeadingText></GridItem> 
+              </Grid>
+            
               <Grid
                 className="primary-grid"
                 spacingType={[Grid.SPACING_TYPE.NONE, Grid.SPACING_TYPE.NONE]}
