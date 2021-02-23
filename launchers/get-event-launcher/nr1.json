@@ -1,0 +1,7 @@
+{
+    "schemaType": "LAUNCHER",
+    "id": "get-event-launcher",
+    "displayName": "GetEventLauncher",
+    "description": "Describe me",
+    "rootNerdletId": "get-event-nerdlet"
+}
