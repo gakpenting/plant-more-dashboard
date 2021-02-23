@@ -15,7 +15,7 @@ import { timeRangeToNrql } from "@newrelic/nr1-community";
 export default class Nr1HowtoAddTimePicker extends React.Component {
   constructor(props) {
     super(props);
-    this.accountId = "3056820";
+    this.accountId = "your account id here";
   }
   render() {
     
