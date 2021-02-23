@@ -1,5 +1,9 @@
 # @REPO@
 
+# SEE THE EXPLANATION HERE
+
+https://www.therelicans.com/spiritbro1/let-s-make-our-planet-cool-again-with-plant-more-27ef
+
 ## Getting started
 
 Run the following scripts:
