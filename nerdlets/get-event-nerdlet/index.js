@@ -18,14 +18,15 @@ export default class Nr1HowtoAddTimePicker extends React.Component {
     this.accountId = "3056820";
   }
   render() {
-    const avgResTime = `SELECT average(duration) FROM Transaction FACET appName TIMESERIES AUTO `;
-    const trxOverview = `FROM Transaction SELECT count(*) as 'Transactions', apdex(duration) as 'apdex', percentile(duration, 99, 95) FACET appName `;
-    const errCount = `FROM TransactionError SELECT count(*) as 'Transaction Errors' FACET error.message `;
-    const responseCodes = `SELECT count(*) as 'Response Code' FROM Transaction FACET httpResponseCode `;
+    
     const contactEvent = `SELECT timestamp,email,name,message FROM Contact `;
     const donateEvent = `SELECT timestamp,organization,url FROM Donate `;
     const successfulEvent = `SELECT timestamp,path,form FROM Successful `;
     const errorEvent = `SELECT timestamp,path,form,error FROM ErrorEvent `;
+    const countryEvent = `SELECT count(*) FROM Country FACET country `;
+    const plantEvent = `SELECT count(*) FROM Plant FACET plant `;
+    const plantSearchEvent = `SELECT count(*) FROM PlantSearch FACET country `;
+    const airEvent = `SELECT count(*) FROM Air FACET country `;
 
     return (
       <PlatformStateContext.Consumer>
@@ -76,10 +77,10 @@ export default class Nr1HowtoAddTimePicker extends React.Component {
                     >
                     <b>Successful Request</b>
                     </HeadingText>
-                    <PieChart
+                    <TableChart
                       fullWidth
                       accountId={this.accountId}
-                      query={responseCodes + since}
+                      query={successfulEvent + since}
                     />
                   </main>
                 </GridItem>
@@ -91,10 +92,70 @@ export default class Nr1HowtoAddTimePicker extends React.Component {
                     >
                       <b>Error Request</b>
                     </HeadingText>
+                    <TableChart
+                      fullWidth
+                      accountId={this.accountId}
+                      query={errorEvent + since}
+                    />
+                  </main>
+                </GridItem>
+                <GridItem className="primary-content-container" columnSpan={6}>
+                  <main className="primary-content full-height">
+                    <HeadingText
+                      spacingType={[HeadingText.SPACING_TYPE.MEDIUM]}
+                      type={HeadingText.TYPE.HEADING_4}
+                    >
+                      <b>What country forest does user search the most?</b>
+                    </HeadingText>
                     <PieChart
                       fullWidth
                       accountId={this.accountId}
-                      query={errCount + since}
+                      query={countryEvent + since}
+                    />
+                  </main>
+                </GridItem>
+                <GridItem className="primary-content-container" columnSpan={6}>
+                  <main className="primary-content full-height">
+                    <HeadingText
+                      spacingType={[HeadingText.SPACING_TYPE.MEDIUM]}
+                      type={HeadingText.TYPE.HEADING_4}
+                    >
+                      <b>What plants does user click the most?</b>
+                    </HeadingText>
+                    <PieChart
+                      fullWidth
+                      accountId={this.accountId}
+                      query={plantEvent + since}
+                    />
+                  </main>
+                </GridItem>
+                <GridItem className="primary-content-container" columnSpan={6}>
+                  <main className="primary-content full-height">
+                    <HeadingText
+                      spacingType={[HeadingText.SPACING_TYPE.MEDIUM]}
+                      type={HeadingText.TYPE.HEADING_4}
+                    >
+                      <b>What country does user check the air quality the most?</b>
+                    </HeadingText>
+                    <PieChart
+                      fullWidth
+                      accountId={this.accountId}
+                      query={airEvent + since}
+                    />
+                  </main>
+                </GridItem>
+                <GridItem className="primary-content-container" columnSpan={6}>
+                  <main className="primary-content full-height">
+                    <HeadingText
+                      spacingType={[HeadingText.SPACING_TYPE.MEDIUM]}
+                      type={HeadingText.TYPE.HEADING_4}
+                    >
+                      <b>What country or area does user check about the plants the most?</b>
+                    </HeadingText>
+                    <PieChart
+                      fullWidth
+                      accountId={this.accountId}
+                      query={plantSearchEvent + since}
                     />
                   </main>
                 </GridItem>
